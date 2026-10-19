@@ -1,0 +1,14 @@
+MSCHIKA WEB BUILD - PETUNJUK
+
+Agar tidak perlu mengunggah folder app satu per satu:
+1. Unggah file Mschika_APK_Test_WebBuild.zip ke halaman utama repository GitHub (jika belum ada).
+2. Di GitHub, buka tab Actions dan klik tautan "set up a workflow yourself" atau buka:
+   https://github.com/fandyku001-sys/Mschika-APK-beta/new/main?filename=.github%2Fworkflows%2Fbuild.yml
+3. Buka file .github/workflows/build.yml dari paket ZIP ini di komputer dengan Notepad.
+4. Salin seluruh isi build.yml dan tempel ke editor file baru GitHub.
+5. Klik Commit changes.
+6. Buka Actions, pilih Build Mschika APK, klik Run workflow, lalu Run workflow lagi.
+7. Setelah centang hijau, buka run tersebut dan unduh artifact Mschika-debug-APK.
+8. Ekstrak artifact ZIP untuk menemukan app-debug.apk.
+
+PENTING: File workflow ini mengharapkan Mschika_APK_Test_WebBuild.zip berada di root repository dan namanya persis sama.
