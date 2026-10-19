@@ -1,0 +1,14 @@
+plugins {
+    id 'com.android.application'
+}
+android {
+    namespace 'com.mschika.apktest'
+    compileSdk 35
+    defaultConfig {
+        applicationId 'com.mschika.apktest'
+        minSdk 23
+        targetSdk 28
+        versionCode 1
+        versionName '1.0'
+    }
+}
