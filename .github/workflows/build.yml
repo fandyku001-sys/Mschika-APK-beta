@@ -1,0 +1,43 @@
+
+name: Build Mschika APK
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Ambil kode proyek
+        uses: actions/checkout@v4
+
+      - name: Siapkan Java
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Siapkan Android SDK
+        uses: android-actions/setup-android@v3
+
+      - name: Siapkan Gradle
+        uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '8.9'
+
+      - name: Ekstrak proyek
+        run: |
+          unzip -o Mschika_APK_Test_WebBuild.zip -d project
+
+      - name: Build APK
+        run: |
+          cd project/Mschika_APK_Test
+          gradle assembleDebug
+
+      - name: Simpan APK
+        uses: actions/upload-artifact@v4
+        with:
+          name: Mschika-debug-APK
+          path: project/Mschika_APK_Test/app/build/outputs/apk/debug/app-debug.apk
+          if-no-files-found: error
